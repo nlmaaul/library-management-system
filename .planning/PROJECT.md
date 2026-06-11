@@ -38,10 +38,11 @@ The project is a university assignment developed by a four-person student team o
 
 ## Constraints
 
-- **Backend**: Python with FastAPI preferred — required technology direction for the project.
-- **Frontend**: React — required client-side framework.
-- **Database**: PostgreSQL — required persistent data store.
-- **Deployment**: The full application must run with Docker.
+- **Application**: Python with Flask — one simple server-rendered web application.
+- **Frontend**: Jinja HTML templates with basic CSS and optional Bootstrap — no separate JavaScript frontend required.
+- **Database**: SQLite through SQLAlchemy — simple local persistence without a separate database server.
+- **Email**: Python SMTP integration — overdue notifications use configurable mail credentials.
+- **Runtime**: The application must run locally with Python and a virtual environment; Docker is not required.
 - **Timeline**: Four weeks — scope must remain achievable within the course deadline.
 - **Team**: Four student developers — work should be divisible with clear ownership and integration boundaries.
 
@@ -50,8 +51,8 @@ The project is a university assignment developed by a four-person student team o
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
 | Build a role-based web application | Students and librarians need different capabilities within one system | — Pending |
-| Use FastAPI, React, and PostgreSQL | Matches the required technology preferences and supports a conventional API-driven architecture | — Pending |
-| Package the system with Docker | The application must run consistently across development and evaluation environments | — Pending |
+| Use Flask, Jinja templates, and SQLite | Keeps the system in one Python codebase and reduces setup and integration work | — Pending |
+| Run with Python virtual environments | Avoids Docker and separate service setup while remaining reproducible through pinned dependencies | — Pending |
 | Limit v1 to physical-book circulation | Keeps the four-week scope focused on the core library workflow | — Pending |
 
 ## Evolution
@@ -72,4 +73,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-11 after initialization*
+*Last updated: 2026-06-11 after simplifying the technology stack*

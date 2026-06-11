@@ -9,7 +9,7 @@ The project progresses through four vertical MVP slices. It first delivers secur
 - [ ] **Phase 1: Student Access and Catalog Discovery** - Students can authenticate and find available books.
 - [ ] **Phase 2: Borrowing Request Workflow** - Students request books and librarians manage catalog and approvals.
 - [ ] **Phase 3: Returns and Overdue Control** - The complete loan lifecycle, overdue tracking, and email alerts work.
-- [ ] **Phase 4: Librarian Insights and Release Readiness** - Librarians see circulation statistics and the Dockerized system is ready for evaluation.
+- [ ] **Phase 4: Librarian Insights and Release Readiness** - Librarians see circulation statistics and the Python application is ready for evaluation.
 
 ## Phase Details
 
@@ -61,7 +61,7 @@ The project progresses through four vertical MVP slices. It first delivers secur
 **Success Criteria** (what must be TRUE):
   1. A librarian can view borrowing totals and current overdue statistics derived from real loan data.
   2. Dashboard statistics update when requests are approved, books are returned, or loans become overdue.
-  3. The React frontend, FastAPI backend, PostgreSQL database, and supporting services start through Docker with documented setup steps.
+  3. The Flask application starts in a Python virtual environment, initializes its SQLite database, and has documented setup steps.
   4. End-to-end verification confirms the primary student and librarian workflows operate together without role or inventory inconsistencies.
 **Plans**: TBD
 
@@ -73,4 +73,3 @@ The project progresses through four vertical MVP slices. It first delivers secur
 | 2. Borrowing Request Workflow | 0/TBD | Not started | - |
 | 3. Returns and Overdue Control | 0/TBD | Not started | - |
 | 4. Librarian Insights and Release Readiness | 0/TBD | Not started | - |
-

@@ -10,10 +10,11 @@ Library Management System is a web application for university students and libra
 
 ### Constraints
 
-- **Backend**: Python with FastAPI preferred — required technology direction for the project.
-- **Frontend**: React — required client-side framework.
-- **Database**: PostgreSQL — required persistent data store.
-- **Deployment**: The full application must run with Docker.
+- **Application**: Python with Flask — one simple server-rendered web application.
+- **Frontend**: Jinja HTML templates with basic CSS and optional Bootstrap — no separate JavaScript frontend required.
+- **Database**: SQLite through SQLAlchemy — no separate database server.
+- **Email**: Python SMTP integration with credentials supplied through environment variables.
+- **Runtime**: Run locally with Python and a virtual environment; Docker is not required.
 - **Timeline**: Four weeks — scope must remain achievable within the course deadline.
 - **Team**: Four student developers — work should be divisible with clear ownership and integration boundaries.
 
@@ -23,7 +24,13 @@ Library Management System is a web application for university students and libra
 
 ## Technology Stack
 
-Technology stack not yet documented. Will populate after codebase mapping or first phase.
+- Python 3.12+
+- Flask for routing, sessions, and server-rendered pages
+- Jinja2 templates with basic CSS or Bootstrap
+- SQLAlchemy ORM with SQLite
+- Werkzeug password hashing for local authentication
+- Python `smtplib` or Flask-Mail for overdue email notifications
+- `pytest` for automated tests
 <!-- GSD:stack-end -->
 
 <!-- GSD:conventions-start source:CONVENTIONS.md -->

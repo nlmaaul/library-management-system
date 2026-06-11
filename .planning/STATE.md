@@ -23,7 +23,7 @@ See: .planning/PROJECT.md (updated 2026-06-11)
 Phase: 1 of 4 (Student Access and Catalog Discovery)
 Plan: 0 of TBD in current phase
 Status: Ready to plan
-Last activity: 2026-06-11 - Initial requirements approved and roadmap drafted
+Last activity: 2026-06-11 - Technology stack simplified to a Python Flask monolith
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -51,7 +51,7 @@ Progress: [░░░░░░░░░░] 0%
 Decisions are logged in PROJECT.md Key Decisions table.
 
 - Initialization: Use a vertical MVP structure across four coarse phases.
-- Initialization: Use FastAPI, React, PostgreSQL, and Docker.
+- Stack revision: Use one Flask application with Jinja templates, SQLite, SQLAlchemy, and Python SMTP.
 
 ### Pending Todos
 
@@ -72,4 +72,3 @@ None yet.
 Last session: 2026-06-11
 Stopped at: Initial roadmap awaiting approval
 Resume file: None
-
