@@ -54,28 +54,28 @@ Roadmap phase mappings will be added during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | TBD | Pending |
-| AUTH-02 | TBD | Pending |
-| AUTH-03 | TBD | Pending |
-| CAT-01 | TBD | Pending |
-| CAT-02 | TBD | Pending |
-| CAT-03 | TBD | Pending |
-| CAT-04 | TBD | Pending |
-| CAT-05 | TBD | Pending |
-| LOAN-01 | TBD | Pending |
-| LOAN-02 | TBD | Pending |
-| LOAN-03 | TBD | Pending |
-| LOAN-04 | TBD | Pending |
-| LOAN-05 | TBD | Pending |
-| LOAN-06 | TBD | Pending |
-| NOTF-01 | TBD | Pending |
-| DASH-01 | TBD | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| CAT-01 | Phase 1 | Pending |
+| CAT-02 | Phase 1 | Pending |
+| CAT-03 | Phase 1 | Pending |
+| CAT-04 | Phase 1 | Pending |
+| CAT-05 | Phase 2 | Pending |
+| LOAN-01 | Phase 2 | Pending |
+| LOAN-02 | Phase 2 | Pending |
+| LOAN-03 | Phase 2 | Pending |
+| LOAN-04 | Phase 3 | Pending |
+| LOAN-05 | Phase 3 | Pending |
+| LOAN-06 | Phase 3 | Pending |
+| NOTF-01 | Phase 3 | Pending |
+| DASH-01 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 16 total
-- Mapped to phases: 0
-- Unmapped: 16
+- Mapped to phases: 16
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-06-11*
-*Last updated: 2026-06-11 after initial definition*
+*Last updated: 2026-06-11 after roadmap creation*
