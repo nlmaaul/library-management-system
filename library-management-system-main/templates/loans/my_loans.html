@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}My Loans{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <h1>My Loans</h1>
+  <p class="muted">Track borrowing requests, active loans, due dates, and returns.</p>
+</section>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Book</th>
+      <th>Status</th>
+      <th>Requested</th>
+      <th>Due Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for loan in loans %}
+      <tr class="{% if loan.is_overdue %}danger-row{% endif %}">
+        <td>{{ loan.book.title }}</td>
+        <td>{{ "overdue" if loan.is_overdue else loan.status }}</td>
+        <td>{{ loan.requested_at.strftime("%Y-%m-%d") }}</td>
+        <td>{{ loan.due_date or "-" }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="4">No loan records yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Catalog{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <h1>Book Catalog</h1>
+  <p class="muted">Browse available library books and request a loan.</p>
+</section>
+
+<form method="get" class="filters">
+  <input type="search" name="q" placeholder="Search title, author, or ISBN" value="{{ filters.q }}">
+  <select name="category">
+    <option value="">All categories</option>
+    {% for category in categories %}
+      <option value="{{ category }}" {% if filters.category == category %}selected{% endif %}>{{ category }}</option>
+    {% endfor %}
+  </select>
+  <select name="availability">
+    <option value="">All availability</option>
+    <option value="available" {% if filters.availability == 'available' %}selected{% endif %}>Available</option>
+    <option value="unavailable" {% if filters.availability == 'unavailable' %}selected{% endif %}>Unavailable</option>
+  </select>
+  <button type="submit" class="button">Filter</button>
+</form>
+
+<div class="book-grid">
+  {% for book in books %}
+    <article class="card">
+      <div class="card-body">
+        <span class="badge">{{ book.category }}</span>
+        <h2>{{ book.title }}</h2>
+        <p class="muted">{{ book.author }}</p>
+        <p>ISBN {{ book.isbn }}</p>
+        <p><strong>{{ book.available_copies }}</strong> of {{ book.total_copies }} copies available</p>
+      </div>
+      <a class="button button-secondary" href="{{ url_for('book_detail', book_id=book.id) }}">View Details</a>
+    </article>
+  {% else %}
+    <p>No books match the current filters.</p>
+  {% endfor %}
+</div>
+{% endblock %}

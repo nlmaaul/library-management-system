@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Librarian Dashboard{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <h1>Librarian Dashboard</h1>
+  <p class="muted">Current circulation summary from live catalog and loan data.</p>
+</section>
+
+<div class="stats-grid">
+  <div class="stat"><span>{{ stats.books }}</span><p>Catalog Books</p></div>
+  <div class="stat"><span>{{ stats.available_copies }}</span><p>Available Copies</p></div>
+  <div class="stat"><span>{{ stats.pending_requests }}</span><p>Pending Requests</p></div>
+  <div class="stat"><span>{{ stats.active_loans }}</span><p>Active Loans</p></div>
+  <div class="stat"><span>{{ stats.overdue_loans }}</span><p>Overdue Loans</p></div>
+  <div class="stat"><span>{{ stats.returned_loans }}</span><p>Returned Loans</p></div>
+</div>
+{% endblock %}

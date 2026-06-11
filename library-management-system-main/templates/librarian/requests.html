@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Borrow Requests{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <h1>Borrow Requests</h1>
+  <p class="muted">Approve or reject pending student requests.</p>
+</section>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Book</th>
+      <th>Requested</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for loan in loans %}
+      <tr>
+        <td>{{ loan.student.name }}<br><span class="muted">{{ loan.student.email }}</span></td>
+        <td>{{ loan.book.title }}<br><span class="muted">{{ loan.book.available_copies }} available</span></td>
+        <td>{{ loan.requested_at.strftime("%Y-%m-%d") }}</td>
+        <td class="actions">
+          <form method="post" action="{{ url_for('decide_request', loan_id=loan.id, action='approve') }}">
+            <button class="button button-small" type="submit">Approve</button>
+          </form>
+          <form method="post" action="{{ url_for('decide_request', loan_id=loan.id, action='reject') }}">
+            <button class="button button-small button-secondary" type="submit">Reject</button>
+          </form>
+        </td>
+      </tr>
+    {% else %}
+      <tr><td colspan="4">No pending requests.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Library Management System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="{{ url_for('index') }}">Library Management</a>
+      <nav class="nav">
+        <a href="{{ url_for('catalog') }}">Catalog</a>
+        {% if current_user and current_user.role == 'student' %}
+          <a href="{{ url_for('my_loans') }}">My Loans</a>
+        {% endif %}
+        {% if current_user and current_user.role == 'librarian' %}
+          <a href="{{ url_for('librarian_dashboard') }}">Dashboard</a>
+          <a href="{{ url_for('manage_books') }}">Books</a>
+          <a href="{{ url_for('manage_requests') }}">Requests</a>
+          <a href="{{ url_for('manage_loans') }}">Loans</a>
+        {% endif %}
+      </nav>
+      <div class="account">
+        {% if current_user %}
+          <span>{{ current_user.name }} ({{ current_user.role }})</span>
+          <form method="post" action="{{ url_for('logout') }}">
+            <button type="submit" class="link-button">Log out</button>
+          </form>
+        {% else %}
+          <a href="{{ url_for('login') }}">Log in</a>
+          <a class="button button-small" href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <main class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="messages">
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

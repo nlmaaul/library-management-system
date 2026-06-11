@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Active Loans{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <h1>Active Loans</h1>
+  <p class="muted">Record returns and monitor overdue loans.</p>
+</section>
+
+<h2>Overdue</h2>
+{% include "librarian/loan_table.html" with context %}
+
+<h2>Current</h2>
+{% set overdue_loans = current_loans %}
+{% include "librarian/loan_table.html" with context %}
+{% endblock %}

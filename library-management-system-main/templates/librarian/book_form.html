@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ "Edit Book" if book else "Add Book" }}{% endblock %}
+{% block content %}
+<section class="panel">
+  <h1>{{ "Edit Book" if book else "Add Book" }}</h1>
+  <form method="post" class="form-grid">
+    <label>Title <input type="text" name="title" value="{{ book.title if book else '' }}" required></label>
+    <label>Author <input type="text" name="author" value="{{ book.author if book else '' }}" required></label>
+    <label>ISBN <input type="text" name="isbn" value="{{ book.isbn if book else '' }}" required></label>
+    <label>Category <input type="text" name="category" value="{{ book.category if book else '' }}" required></label>
+    <label>Total Copies <input type="number" min="0" name="total_copies" value="{{ book.total_copies if book else 1 }}" required></label>
+    <label>Available Copies <input type="number" min="0" name="available_copies" value="{{ book.available_copies if book else 1 }}" required></label>
+    <label class="full">Description <textarea name="description" rows="5">{{ book.description if book else '' }}</textarea></label>
+    <button type="submit" class="button">Save Book</button>
+  </form>
+</section>
+{% endblock %}
